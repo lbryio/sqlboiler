@@ -86,6 +86,7 @@ func deleteOneToManyConflictsBeforeMerge(tx boil.Executor, conflict conflictingU
     for i, column := range conflict.columns {
         if column == conflict.objectIdColumn {
             objectIDIndex = i
+            break
         }
     }
 	query := fmt.Sprintf(
